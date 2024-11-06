@@ -1,0 +1,8 @@
+.socialMedia-bar{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 30%;
+  gap: 5px;
+}
+

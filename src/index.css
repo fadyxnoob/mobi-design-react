@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    font-family: "Poppins";
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+}
+
+.login-card {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+}
+
+.signUp-card {
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    z-index: 1000000;
+    overflow: auto;
+}
+
+.auth-box {
+    left: 10%;
+    width: 100px;
+}
+
+.radio-input {
+    accent-color: #B05D36;
+}
+
+
+.resetPng {
+    transition: 1s all;
+}
+
+.resetPng:hover {
+    transform: rotate(-135deg);
+}
+
+.statusText {
+    left: 0%;
+}
+
+.statusSecondText {
+    left: -5%;
+}
+
+.statusLastText {
+    right: 20%;
+}
+
+.sectionBar {
+    height: 1px;
+}
+
+.designCard {
+    height: 500px;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+
+
