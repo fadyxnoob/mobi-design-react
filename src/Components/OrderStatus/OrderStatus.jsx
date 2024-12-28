@@ -19,11 +19,11 @@ const OrderStatus = () => {
   return (
     <>
       <Topbar textColor={color} bgColor={bg} siteTitle={title} iconText={text} icon={icon} />
-      <div className="h-screen w-full bg-primary p-5 flex flex-col">
-        <div className="status-bar h-20 flex items-center justify-center w-5/6 mx-auto">
+      <div className="h-full md:h-screen w-full bg-primary md:p-5 flex flex-col">
+        <div className="status-bar h-20 flex items-center justify-center w-5/6 mx-auto mb-20 md:mb-0">
           <StatusBar status={status} />
         </div>
-        <div className="status-bar h-auto relative top-32 w-5/6 mx-auto">
+        <div className="status-bar h-auto relative md:top-24 w-5/6 md:mx-auto">
 
          { status === 'Processing' ? (
 

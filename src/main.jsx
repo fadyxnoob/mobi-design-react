@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { StrictMode } from 'react';
 import App from './App.jsx';
 import './index.css';
-import {Personalizations, Design, Colors, Options, Finish, Layout, OrderDetails, OrderSummary, TrackOrderNumber} from './Components/index.js'
+import {Personalizations, Design, Colors, Options, Finish, Layout, OrderDetails, OrderSummary, TrackOrderNumber, OrderStatus} from './Components/index.js'
 
 
 const router = createBrowserRouter([
@@ -51,6 +51,10 @@ const router = createBrowserRouter([
   {
     path: "/order-summary",
     element: <OrderSummary />,
+  },
+  {
+    path: "/order-status",
+    element: <OrderStatus />,
   },
 ]);
 
