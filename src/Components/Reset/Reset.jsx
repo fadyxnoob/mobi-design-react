@@ -3,7 +3,7 @@ import ResetIcon from '../../assets/images/reset.png'
 import { Link } from 'react-router-dom';
 
 const Reset = ({ positionX = 'right-6', positionY = 'top-16', size='size-24' , nsm}) => {
-
+    
     const handleRestLocalStorage = () => {
         localStorage.setItem('baseColor', '');
         localStorage.setItem('colorOne', '');
@@ -13,6 +13,7 @@ const Reset = ({ positionX = 'right-6', positionY = 'top-16', size='size-24' , n
         localStorage.setItem('riderNumberColor', '');
         localStorage.setItem('customSvg', '');
     }
+    
     return (
         <>
             <div className={`flex ms-auto justify-end p-0 m-0 ${size} absolute ${positionX} ${positionY} ${nsm}`}>

@@ -1,5 +1,5 @@
 import React from 'react';
-
+    
 const LabelBox = ({ inputs, isOpen, label, type, typeDisplay, value = '', onInputChange, selectedOptions }) => {
 
     const firstLatterCapital = (label) => {
@@ -13,7 +13,7 @@ const LabelBox = ({ inputs, isOpen, label, type, typeDisplay, value = '', onInpu
 
     return (
         <div
-            className={`labelBox rounded bg-secondary text-light absolute right-64 nsm:right-60 top-0 p-3 w-60
+            className={`labelBox rounded bg-secondary text-light absolute md:right-64 right-0 -top-44 md:top-0 p-3 w-60
             ${isOpen ? 'block' : 'hidden'}`}
         >
             <h6 className='font-semibold nsm:text-center'>{label ? `Choose ${firstLatterCapital(label)}` : 'Choose an Option'}</h6>

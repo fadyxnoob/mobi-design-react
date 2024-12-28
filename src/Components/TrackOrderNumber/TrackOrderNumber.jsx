@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import {Reset, Input} from '../'
+import { Reset, Input } from '../'
 
 const TrackOrderNumber = () => {
-    const form = useForm();
-    const { register, control, handleSubmit, formState } = form;
-    const { errors } = formState
+    const [value, setValue] = useState('')
+    const { register, handleSubmit, formState } = useForm();
 
     const onSubmit = (data) => {
         console.log('submitted', data);
-        
+
     };
 
 
@@ -23,10 +22,13 @@ const TrackOrderNumber = () => {
                     <div className='border border-light py-16 px-16 rounded mt-10'>
                         <form className="w-full text-light" onSubmit={handleSubmit(onSubmit)} noValidate>
                             <Input
+
                                 id="orderNumber"
                                 type="text"
                                 label="Email"
                                 display='hidden'
+                                value={value}
+                                onChange={(e) => setValue(e.target.value)}
                                 placeholder="Enter Order Number..."
                                 style={inputStyle}
                                 labelColor="light"
@@ -41,10 +43,6 @@ const TrackOrderNumber = () => {
                                         message: 'Order Number must start with 3 capital letters followed by 5 digits'
                                     },
 
-                                    // validate: {
-                                    //     noOnlyLetters: (value) => !/^[A-Za-z]+$/.test(value) || 'Order Number cannot contain only letters',
-                                    //     noOnlyDigits: (value) => !/^\d+$/.test(value) || 'Order Number cannot contain only digits',
-                                    // },
 
                                     maxLength: {
                                         value: 9,

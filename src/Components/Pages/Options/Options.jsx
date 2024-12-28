@@ -1,16 +1,17 @@
-import {SVG, Label, LabelBox, Reset} from '../../';
-import React, { useState } from 'react';
+import { SVG, Label, LabelBox, Reset } from '../../';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
 
 const Options = () => {
+
     const [selectedLabel, setSelectedLabel] = useState(null);
     const [isBoxOpen, setIsBoxOpen] = useState(false);
     const [selectedOptions, setSelectedOptions] = useState({});
     const [totalPrice, setTotalPrice] = useState(500);
-
     const form = useForm();
     const { control } = form;
+
 
     const labelData = {
         'LEATHER': [
@@ -98,14 +99,17 @@ const Options = () => {
         );
     };
 
+  
     return (
-        <div className='h-screen w-full bg-primary nsm:h-full nsm:pb-10'>
-            <div className="card-holder flex items-start justify-between w-full nsm:flex-col">
-                <SVG />
+        <div className='md:h-screen w-full bg-primary h-full pb-10'>
+            <div className="card-holder flex items-start justify-between w-full flex-col md:flex-row">
+                <div className='w-full md:w-1/2'>
+                    <SVG />
+                </div>
 
-                <div className="h-full w-1/2 flex justify-end items-end flex-col nsm:pr-5 nsm:w-full">
+                <div className="h-full flex flex-col justify-center items-center pr-5 w-full md:flex-row md:w-1/2 md:justify-end md:items-end relative top-12">
                     <form action="">
-                        <div className="inputFields w-60 h-fit pb-4 relative right-20 nsm:right-0 ">
+                        <div className="inputFields w-60 h-fit pb-4 relative md:right-20 right-0 ">
                             {Object.keys(labelData).map((label, index) => (
                                 <Label
                                     key={index}
@@ -132,7 +136,7 @@ const Options = () => {
                         </div>
                     </form>
                     <DevTool control={control} />
-                    <div className="relative nsm:hidden">
+                    <div className="relative hidden md:block">
                         <Reset positionX='right-36' positionY='top-0' />
                     </div>
                 </div>

@@ -12,7 +12,7 @@ const Card = ({ image, ALT, onClick, isSelected }) => {
         </div>
     );
 }
-
+   
 export default Card;
 
 

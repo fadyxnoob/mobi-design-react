@@ -7,6 +7,7 @@ export const Provider = ({ children }) => {
     const [isAuthModalVisible, setAuthModalVisible] = useState(false);
     const [isLoginModelVisible, setLoginModelVisible] = useState(false);
     const [isRegisterModelVisible, setRegisterModelVisible] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const toggleAuthModal = () => {
 
@@ -33,6 +34,9 @@ export const Provider = ({ children }) => {
         setRegisterModelVisible(false);
     }
 
+    const handleMobileMenu = () => {
+        setIsMobileMenuOpen((p) => !p)
+    }
     return (
         <Context.Provider value={{
             isAuthModalVisible,
@@ -41,9 +45,12 @@ export const Provider = ({ children }) => {
             toggleLoginModal,
             isRegisterModelVisible,
             toggleRegisterModal,
-            closeModelBox
+            closeModelBox,
+            isMobileMenuOpen,
+            handleMobileMenu
         }}>
             {children}
         </Context.Provider>
     );
+
 };

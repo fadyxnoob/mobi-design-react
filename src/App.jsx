@@ -4,7 +4,7 @@ import FullScreenIcon from './assets/images/full-screen.png'
 
 
 function App() {
-
+     
   const [loader, setLoader] = useState(false)
   const color = 'light'
   const title = "DESIGN YOUR OWN SUITS"

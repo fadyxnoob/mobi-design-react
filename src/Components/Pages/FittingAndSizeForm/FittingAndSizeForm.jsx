@@ -9,7 +9,7 @@ const FittingAndSizeForm = () => {
     };
 
     return (
-        <div className='labelBox rounded bg-secondary text-light absolute right-64 top-0 p-3 w-80 max-h-600 overflow-auto scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-secondary scrollbar-track-ButtonBG'>
+        <div className='labelBox rounded bg-secondary text-light absolute md:right-64 md:top-0 bottom-[100%] -right-14 p-3 w-80 max-h-600 overflow-auto scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-secondary scrollbar-track-ButtonBG'>
             <h3 className="text-lg font-semibold">CHOOSE FITTING & SIZE</h3>
 
             {/* Fitting Section */}

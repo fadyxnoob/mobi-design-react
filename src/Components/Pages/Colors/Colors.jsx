@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import {Reset, SVG} from '../../';
+import React, { useState, memo } from 'react';
+import { Reset, SVG } from '../../';
 
 const Colors = () => {
+
   const [baseColor, setBaseColor] = useState(localStorage.getItem('baseColor') || '');
   const [colorOne, setColorOne] = useState(localStorage.getItem('colorOne') || '');
   const [colorTwo, setColorTwo] = useState(localStorage.getItem('colorTwo') || '');
@@ -43,22 +44,27 @@ const Colors = () => {
 
 
   return (
-    <div className='h-screen w-full bg-primary nsm:h-full nsm:pb-10'>
-      <div className="card-holder flex items-start justify-between w-full nsm:flex-col">
+    <div className='w-full bg-primary h-full pb-10 md:h-screen md:pb-0'>
+      <div className="card-holder flex items-start justify-between w-full flex-col md:flex-row ">
 
-        <SVG
-          baseColor={baseColor}
-          colorOne={colorOne}
-          colorTwo={colorTwo}
-          logosColor={logosColor}
-          riderNameColor={riderNameColor}
-          riderNumberColor={riderNumberColor}
-        />
+        <div
+          className='w-full md:w-1/2'
+        >
+          <SVG
+            baseColor={baseColor}
+            colorOne={colorOne}
+            colorTwo={colorTwo}
+            logosColor={logosColor}
+            // riderNameColor={riderNameColor}
+            // riderNumberColor={riderNumberColor}
+          />
+        </div>
 
-        <div className="h-full w-1/2 flex justify-end items-end flex-col gap-8 nsm:w-full nsm:items-center nsm:flex-row nsm:p-2">
+        <div className="h-full md:w-1/2 flex justify-end flex-col gap-8 w-full items-center p-2 relative top-12">
           {/* Color inputs */}
-          <div className="inputFields w-56 nsm:w-1/2 h-fit pb-4 relative bg-ButtonBG right-20 nsm:static">
+          <div className="inputFields md:w-56 w-full h-fit pb-4 relative bg-ButtonBG right-0 md:left-36">
             <h1 className='bg-secondary w-full text-center p-2 text-light font-semibold'>Choose Colors</h1>
+
             <div className="w-4/6 mx-auto mt-6 flex flex-col gap-2 ">
 
               <div className="w-full flex gap-2">
@@ -96,7 +102,7 @@ const Colors = () => {
             </div>
           </div>
 
-          <div className="inputFields w-56 nsm:w-1/2 h-fit pb-4 relative bg-ButtonBG right-20 nsm:static">
+          <div className="inputFields w-full md:w-56 h-fit pb-4 relative bg-ButtonBG right-0 md:left-36">
             <h1 className='bg-secondary w-full text-center p-2 text-light font-semibold'> Logo & Rider Colors</h1>
             <div className="w-4/6 mx-auto mt-6 flex flex-col gap-2">
 
@@ -135,8 +141,8 @@ const Colors = () => {
             </div>
           </div>
 
-          <div className="relative nsm:hidden">
-            <Reset positionX='right-36' positionY='top-0' />
+          <div className="relative hidden md:block">
+            <Reset positionX='left-24' positionY='top-0' />
           </div>
         </div>
       </div>
@@ -144,4 +150,4 @@ const Colors = () => {
   );
 };
 
-export default Colors;
+export default memo(Colors);

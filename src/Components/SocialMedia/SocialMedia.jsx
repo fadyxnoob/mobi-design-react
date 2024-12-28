@@ -5,9 +5,8 @@ import instagram from '../../assets/images/instagram.png'
 import facebook from '../../assets/images/facebook.png'
 function SocialMedia() {
     return (
-        <>
-            <div className="socialMedia-bar right-2 nsm:hidden">
-                
+        <>    
+            <div className="absolute top-[31%] right-2">
                 <div className="icon-holder h-10 w-10 cursor-pointer">
                     <a href="https://wa.me/message/SBDCDBETODETG1">
                     <img src={whatsapp} alt={whatsapp} className='w-full h-full object-cover' />
@@ -23,7 +22,6 @@ function SocialMedia() {
                     <img src={facebook} alt={facebook} className='w-full h-full object-cover' />
                     </a>
                 </div>
-
             </div>
         </>
     )

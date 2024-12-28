@@ -1,28 +1,46 @@
-import React from 'react';
+import React, { useId } from 'react';
 
-const Input = ({ labelStyle, flex = 'block', label, id, type, style, placeholder, lableColor, display = 'block', inputName, isDisabled, value = "", onChange }) => {
+const Input = (
+  { labelStyle,
+    flex = 'block',
+    label,
+    type,
+    style,
+    placeholder,
+    labelColor,
+    display = 'block',
+    inputName,
+    isDisabled,
+    // onChange,
+    ...props
+  }, ref) => {
+  const id = useId();
+
   return (
-    <div className={`input-group mb-4 w-full ${flex}`}>
+    <div
+      className={`input-group w-full ${flex}`
+      }>
       {label &&
         <label
           htmlFor={id}
-          className={`${display} mb-2 text-${lableColor} ${labelStyle}`}
+          className={`${display} mb-2 text-${labelColor} ${labelStyle}`}
         >
           {label}
         </label>}
 
       <input
+        {...props}
         type={type}
         id={id}
         className={`${style}`}
         placeholder={placeholder}
         {...inputName}
         disabled={isDisabled}
-        value={value}
-        onChange={onChange}
+        // onChange={onChange}
+        ref={ref}
       />
     </div>
   );
 }
 
-export default Input;
+export default React.forwardRef(Input);

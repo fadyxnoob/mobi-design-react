@@ -6,7 +6,8 @@ const Auth = () => {
 
     if (!isAuthModalVisible) {
         return null;
-    }   
+    }      
+    
     return (
         <div className={`${toggleAuthModal} auth-box absolute top-10 bg-primary p-2 rounded-lg text-light flex items-start gap-px justify-center flex-col nsm:flex-row nsm:w-fit nsm:top-1 nsm:border nsm:border-secondary`}>
             <div className='input flex items-center mb-2 nsm:mr-3'>

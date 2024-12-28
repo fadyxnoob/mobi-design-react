@@ -319,7 +319,7 @@ const LogosForm = () => {
     };
 
     return (
-        <div className="labelBox rounded bg-secondary text-light absolute right-64 top-0 p-3 w-80  max-h-600 overflow-auto scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-secondary scrollbar-track-ButtonBG">
+        <div className="labelBox rounded bg-secondary text-light absolute md:right-64 -right-14 border  md:top-0 bottom-[100%] p-3 w-80  max-h-600 overflow-auto scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-secondary scrollbar-track-ButtonBG">
             <form>
                 <h3 className="text-lg font-semibold">UPLOAD LOGOS</h3>
 

@@ -1,17 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+const withMT = require("@material-tailwind/react/utils/withMT");
+module.exports = withMT({
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     colors: {
-
       transparent: 'transparent',
       current: 'currentColor',
-
-      // Theme Colors
-
       'primary': '#682000',
       'light': '#ffffff',
       'dark': '#000000',
@@ -22,8 +19,6 @@ export default {
       'skyBlue': '#0ea5e9',
       'ButtonBG': '#ce936c',
       'lableBoxBG': '#5b2502'
-
-
     },
 
     extend: {
@@ -48,15 +43,12 @@ export default {
 
       },
       maxHeight: {
-        '600': '600px', // Custom class for max-h-800 with 600px
+        '600': '500px', // Custom class for max-h-800 with 600px
       },
-      screens: {
-        'xsm': {'max': '450px'}, 
-        'nsm' : {'max' : '600px'}
-      },
+     
     }
   },
   plugins: [
     require('tailwind-scrollbar'),
   ],
-}
+})

@@ -11,7 +11,7 @@ const Design = () => {
   return (
     <>
       <div className='w-full bg-primary'>
-        <div className="card-holder flex items-center justify-center w-full h-screen gap-5 nsm:h-full nsm:flex-col nsm:pb-5">
+        <div className="card-holder flex items-center justify-center w-full gap-5 h-full flex-col pb-5 md:flex-row">
           <Card
             image={slider1} ALT={slider1}
             onClick={() => selectCard('slider1.png')}

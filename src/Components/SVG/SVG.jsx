@@ -1,10 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 import image from '../../assets/images/svg.svg'
-const SVG = ({ baseColor, colorOne, colorTwo, logosColor, riderNameColor, riderNumberColor }) => {
+
+const SVG = ({ baseColor, colorOne, colorTwo, logosColor }) => {
+  
   const svgRef = useRef(null);
   const [svgContent, setSvgContent] = useState('');
   const [svgLoaded, setSvgLoaded] = useState(false);
-
+     
   // Load SVG content from local storage or fetch if not available
   useEffect(() => {
     const savedSvg = localStorage.getItem('customSvg');
@@ -50,20 +52,20 @@ const SVG = ({ baseColor, colorOne, colorTwo, logosColor, riderNameColor, riderN
     updateColorInline('#colorOne', colorOne);
     updateColorInline('#colorTwo', colorTwo);
     updateColorInline('#logosColors', logosColor);
-    updateColorInline('#riderNameColor', riderNameColor);
-    updateColorInline('#riderNumberColor', riderNumberColor);
+    // updateColorInline('#riderNameColor', riderNameColor);
+    // updateColorInline('#riderNumberColor', riderNumberColor);
 
     // Serialize SVG content and store in local storage
     const svgElement = svgRef.current.querySelector('svg');
     if (svgElement) {
       const updatedSvg = new XMLSerializer().serializeToString(svgElement);
       localStorage.setItem('customSvg', updatedSvg);
-      console.log('SVG saved to local storage:', updatedSvg); // Log the updated SVG
+      // console.log('SVG saved to local storage:', updatedSvg); // Log the updated SVG
     } else {
       console.error('SVG element not found in svgRef.current');
     }
 
-  }, [baseColor, colorOne, colorTwo, logosColor, riderNameColor, riderNumberColor, svgLoaded]);
+  }, [baseColor, colorOne, colorTwo, logosColor, svgLoaded]);
 
   // Ensure SVG content is updated after fetching
   useEffect(() => {
@@ -72,13 +74,13 @@ const SVG = ({ baseColor, colorOne, colorTwo, logosColor, riderNameColor, riderN
       if (svgElement) {
         const updatedSvg = new XMLSerializer().serializeToString(svgElement);
         localStorage.setItem('customSvg', updatedSvg);
-        console.log('SVG updated and saved to local storage:', updatedSvg);
+        // console.log('SVG updated and saved to local storage:', updatedSvg);
       }
     }
   }, [svgLoaded]);
 
   return (
-    <div className="svg-holder w-1/2 p-10 nsm:w-full">
+    <div className="svg-holder p-10 w-full">
       <div
         ref={svgRef}
         className="h-full w-full object-contain"

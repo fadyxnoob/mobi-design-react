@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+     
 function Topbar({ textColor, bgColor, siteTitle, iconText, icon }) {
     return (
         <>
-            <div className={`bg-${bgColor} flex md:justify-between  sm:justify-center nsm:justify-center items-center h-12 w-full px-5 text-${textColor}`}>
+            <div 
+            className={`bg-${bgColor} flex justify-center items-center md:justify-between sm:justify-center h-12 w-full px-5 text-${textColor}`}
+            >
                 {/* Site Title */}
                 <Link to="/">
-                    <h1 className="sm:text-center text-white text-lg font-bold">
+                    <h1 className="text-center text-white text-lg font-bold">
                         {siteTitle}
                     </h1>
-                </Link>
+                </Link>    
                 {/* <button className='text-primary p-1 rounded-sm px-2 xsm:block sm:hidden bg-light '>
                     Logout
                 </button> */}

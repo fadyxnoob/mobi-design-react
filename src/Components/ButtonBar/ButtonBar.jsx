@@ -5,7 +5,7 @@ const ButtonBar = ({ onNext, onPrev }) => {
     const location = useLocation();
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 600);
     // const isActive = (path) => location.pathname === path;
-
+   
     useEffect(() => {
         const handleResize = () => {
             setIsSmallScreen(window.innerWidth < 600);
@@ -18,7 +18,7 @@ const ButtonBar = ({ onNext, onPrev }) => {
     let sectionName;
 
     if (location.pathname === '/design') {
-        sectionName = isSmallScreen ? 'Choose Your Design' : 'Choose Your Design';
+        sectionName = isSmallScreen ? 'Choose Design' : 'Choose Your Design';
     } else if (location.pathname === '/colors') {
         sectionName = isSmallScreen ? 'Choose Colors' : 'Choose Your Design -> Choose Colors';
     } else if (location.pathname === '/options') {
@@ -26,12 +26,12 @@ const ButtonBar = ({ onNext, onPrev }) => {
     } else if (location.pathname === '/personalizations') {
         sectionName = isSmallScreen ? ' Personalizations' : 'Choose Your Design -> Choose Colors -> Choose Options -> Choose Personalizations';
     } else if (location.pathname === '/submit') {
-        sectionName = isSmallScreen ? 'Submit Your Design' : 'Submit Your Design';
+        sectionName = isSmallScreen ? 'Submit Design' : 'Submit Your Design';
     }
 
     return (
 
-        <div className="h-36 bg-primary nsm:pt-2">
+        <div className="h-36 bg-primary pt-5 md:pt-0">
             <div
                 className='flex w-full h-12 items-center justify-between text-primary bg-secondary relative top-12'
             >
